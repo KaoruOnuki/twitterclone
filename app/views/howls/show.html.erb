@@ -1,0 +1,12 @@
+<div class="editting_form container">
+    <h1><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>詳細確認</h1>
+    
+    <div class="editting_column">
+        <div class="action_order">あなたの投稿です<br>OWLメッセージがたくさん来ると良いですね</div>
+        <div class="content_check_msg"><%= @howl.content %></div>
+    </div>
+
+    <div class="move pages">
+        <p><%= link_to "一覧に戻る", howls_path, class: "move_pages_function" %></p>
+    </div>
+</div>

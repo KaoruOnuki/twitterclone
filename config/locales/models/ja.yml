@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    # models:
+    #   howl: イベント
+    #   content: 内容
+    attributes:
+      howl:
+        name: 名前
+        content: 内容

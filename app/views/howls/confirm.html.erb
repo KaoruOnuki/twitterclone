@@ -1,0 +1,18 @@
+<div class="editting_form container">
+    <h1><span class="glyphicon glyphicon-send" aria-hidden="true"></span>以下で登録</h1>
+
+    <div class="editting_column">
+    <%= form_with(model: @howl, local: true, url: howls_path) do |form| %>
+        <%= form.hidden_field :content %>
+        
+        <%= form.label :内容を確認してください, class: "action_order" %>
+        <div class="content_check_msg"><%= @howl.content %></div>
+        <%= form.submit "登録", class: "confirm_function" %>
+    <% end %>
+    </div>
+    
+    <%= form_with(model: @howl, local: true, url: new_howl_path, method: "get") do |form| %>
+        <%= form.hidden_field :content %>
+        <%= form.submit "編集に戻る", name: "back", class: "move_pages_function" %>
+    <% end %>
+</div>

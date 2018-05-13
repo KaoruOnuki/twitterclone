@@ -1,0 +1,188 @@
+<div class="container-fruid">
+    <div class="parallax">
+        <div class="parallax_title">
+            <h4>HOWL(ハウル)の意味：</h4>
+            <p>天を仰ぎながら長く鳴き声を上げる独特の鳴き方</p>
+            <p>イヌ科の動物、特に狼に強く見られる習性で、遠方にいる仲間とのコミュニケーションや群れの連携における何かしら合図、仲間とはぐれたときの救難信号などの意図を伝えるためにおこなう</p>
+        </div>
+    </div>
+    
+    <div class="wrapper row">
+        <div class="wrapper_left col-md-6">
+            <table>
+                <tr>
+                    <td><%= image_tag "logo1.png", :width => '60' %></td>
+                    <td>
+                        <h4>HOWLERs COMMUNITY</h4>
+                        <p>溜まったストレスは書いて消化しよう</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><%= image_tag "logo2.png", :width => '70' %></td>
+                    <td>
+                        <h4>MATEs BUTTON</h4>
+                        <p>共感できる、賛同出来る、仲間の声に応えよう</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><%= image_tag "logo3.png", :width => '80' %></td>
+                    <td>
+                        <h4>OWL MESSAGE</h4>
+                        <p>知恵の鳥、フクロウメッセージでアドバイスしあおう</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    
+        <div class="wrapper_right col-md-6">
+            <%= image_tag "shadow_logo3.png", :height => '300', :class => "shadow_logo3" %>
+            
+            <div class="wrapper_right_title">
+                <h2>悩み、ストレスは書きだそう。助け合おう。</h2>
+                <h4>HOWLをはじめる</h4>
+                <ul>
+                    <li>
+                        <button type="button" class="btn btn-default btn-lg">
+                          <%= link_to "自分の投稿一覧を見る", howls_path %>
+                        </button>
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="btn btn-default btn-lg">
+                          <%= link_to "新規投稿をする", new_howl_path %>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h4>HOWL is about</h4>
+        <h2>SHARING NEGATIVES & HELP EACH OTHER</h2>
+        <p>賛同出来る仲間が遠吠えで応えてくれる。OWLメッセージでアドバイスがもらえる。</p>
+        <p>3つのポイント</p>
+    </div>
+
+    <div class="features row">
+        <div class="feature col-md-4">
+            <div class="feature_column">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '60' %></td>
+                        <td><h3>HOWLERs COMMUNITY</h3></td>
+                    </tr>
+                </table>
+            <p class="feature_content">最近ストレスちゃんと解消できてる？<br>ネガティブな感情は溜めないでHOWLに書き出して解消していこう。</p>
+            </div>
+        </div>
+        
+        <div class="feature col-md-4">
+            <div class="feature_column">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo5.png", :width => '90' %></td>
+                        <td><h3>MATEs BUTTON</h3></td>
+                    </tr>
+                </table>
+                <p class="feature_content">あなたは一人じゃない。<br>あなたの悩みに共感する世界中の仲間がMATEsボタンで応えてくれる。</p>
+            </div>
+        </div>
+        
+        <div class="feature col-md-4">
+            <div class="feature_column">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo6.png", :width => '110' %></td>
+                        <td><h3>OWL MESSAGE</h3></td>
+                    </tr>
+                </table>
+                <p class="feature_content">あなたの経験が仲間を救う。<br>誰かの悩みを見たら励ましの言葉、アドバイスや解決法をOWLメッセージで残そう。</p>
+            </div>
+        </div>
+    </div><!-- features row -->
+
+    <div class="other_howls">
+        <div class="other_howls_title">
+            <h4>HOWL is about</h4>
+            <h2>GET ADVICE & GIVE ADVICE</h2>
+            <p>どういう風に書けばいいの？何を書けばいいの？</p>
+            <p>みんなのHOWLを見てみよう。</p>
+        </div>
+        
+        <div class="other_howls_content row">
+            <div class="other_howls_content_one col-sm-6">
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Millie Bobby Brown</p></td>
+                    </tr>
+                </table>
+                <p>Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+            
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Justin Trudeau</p></td>
+                    </tr>
+                </table>
+                <p>On #WorldChildrensDay, let’s make sure every child gets the love, safety, and support they need to pursue their dreams. https://twitter.com/UN/status/9326. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+            
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Malala</p></td>
+                    </tr>
+                </table>
+                <p>To every child - I dream of a world where you can laugh, dance, sing, learn, live in peace and be happy.#WorldChildrensDay</p>
+            </div>
+            
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Sophie Wisbrun</p></td>
+                    </tr>
+                </table>
+                <p>#ForEveryChild a happy healthy sustainable future today and forever! #WorldChildrensDay @UNICEF. A day for children, by children. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+        </div>
+            <div class="other_howls_content_two col-sm-6">
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Millie Bobby Brown</p></td>
+                    </tr>
+                </table>
+                <p>A day for children, by children. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+            
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Millie Bobby Brown</p></td>
+                    </tr>
+                </table>
+                <p>Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+            
+            <div class="other_howl">
+                <table>
+                    <tr>
+                        <td><%= image_tag "logo4.png", :width => '40' %></td>
+                        <td><p>Millie Bobby Brown</p></td>
+                    </tr>
+                </table>
+                <p>I’m here overseas kicking off #WorldChildrensDay! A day for children, by children. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensdayI’m here overseas kicking off #WorldChildrensDay! A day for children, by children. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
+            </div>
+        </div>
+        </div>
+    </div><!-- other_howls rows -->
+</div><!-- container -->

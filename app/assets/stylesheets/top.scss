@@ -1,0 +1,138 @@
+.parallax {
+    position: relative;
+    background: image-url('moon.jpeg');
+    width: 100%;
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px;
+}
+
+.parallax_title {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 50px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    margin: 50px 0;
+}
+
+.parallax h4 {
+    margin: 0;
+}
+
+.wrapper_left {
+    height: 350px;
+}
+
+.wrapper_left table {
+    margin: 0 auto;
+}
+
+.wrapper_left td {
+    padding: 20px;
+}
+
+.wrapper_right {
+    background-color: #BFB89D;
+    position: relative;
+    height: 350px;
+}
+
+.wrapper_right_title {
+    position: absolute;
+    margin-left: 20px;
+}
+
+.shadow_logo3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.wrapper_right ul {
+    list-style: none;
+}
+
+.wrapper_right .btn {
+    width: 200px;
+    border: none;
+}
+
+.wrapper_right .btn a {
+    text-decoration: none;
+    color: #777;
+    font-size: 13px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    margin-top: 20px;
+    border-radius: 20px;
+    line-height: 1.5;
+}
+
+.summary {
+    margin-left: 20px;
+    padding: 30px;
+}
+
+.summary h2 {
+    color: #798AFF;
+}
+
+.feature table {
+    margin: 0 auto; 
+}
+
+.feature_column {
+    margin: 10px;
+    padding: 100px 20px;
+    text-align: center;
+    border: 2px solid #798AFF;
+    border-radius: 20px;
+}
+
+.other_howls_title {
+    margin-left: 20px;
+    padding: 30px;   
+}
+
+.other_howls_title h2 {
+    color: #798AFF;
+}
+
+.other_howls_content {
+    background-color: #000;
+    padding: 100px;
+}
+
+.other_howl {
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.other_howl p {
+    padding: 40px 0;
+}
+
+.other_howl td {
+    padding: 20px;
+}
+
+.other_howl td p {
+    color: #798AFF;
+    font-weight: bold;
+}
+
+
+/* #################### Responsive Design 544px以下 #################### */
+@media (max-width: 544px) {	  
+    .other_howls_content {
+        padding: 10px;
+    }
+}

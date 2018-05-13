@@ -1,0 +1,184 @@
+///////////////////////////////////////////////// application.html.erb
+header {
+    background-color: #000;
+}
+
+.navbar {
+    background-color: #000;
+    border: none;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+    color: #BFB89D;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #BFB89D;
+}
+
+.navbar-toggle {
+    border: none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+
+body {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+footer {
+    background-color: #000;
+    color: #777;
+}
+
+.footer_title {
+    padding: 20px;
+    text-align: right;
+}
+
+///////////////////////////////////////////////// index.html.erb
+.index_form {
+    padding: 60px;
+}
+
+.posted_sum {
+    margin: 0 auto;
+}
+
+.posted_column {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.posted_column_content {
+  overflow: hidden;
+  width: 100%;
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+}
+
+.posted_column_content span {
+    font-size: 20px;
+    color: #BFB89D;
+}
+
+.posted_column_buttons {
+    border-left: 1px solid #BFB89D;
+    border-bottom: 1px solid #BFB89D;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.sum_function {
+    color: #777;
+}
+
+.sum_function:hover {
+    text-decoration: none;
+    color: #BFB89D;
+}
+
+.move_pages {
+    margin: 0 auto;
+}
+
+.move_pages p {
+    padding-top: 30px;
+}
+
+.move_pages_function {
+    border: 1px solid #BFB89D;
+    padding: 10px 70px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #BFB89D;
+}
+
+.move_pages_function:hover {
+    background-color: #fff;
+    text-decoration: none;
+    color: #BFB89D;
+}
+
+///////////////////////////////////////////////// _form.html.erb
+.editting_form  {
+    padding: 60px 10px;
+}
+
+.editting_form span {
+    margin: 0 10px 0 20px;
+    color: #BFB89D;
+}
+
+.editting_column {
+    margin: 0 auto 30px auto;
+}
+
+#error_explanation ul{
+    list-style: none;
+    color: #777;
+}
+
+.action_order {
+    color: #777;
+    font-weight: normal;
+}
+
+.field_size {
+    width: 100%;
+    height: 100px;
+    margin: 10px 10px 30px 10px;
+}
+
+///////////////////////////////////////////////// confirm.html.erb
+.content_check_msg {
+    word-wrap: break-word;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.confirm_function {
+    border: 1px solid #789AFF;
+    padding: 10px 70px;
+    color: #fff;
+    background-color: #789AFF;
+    margin-left: 0;
+}
+
+.confirm_function:hover {
+    background-color: #fff;
+    text-decoration: none;
+    color: #789AFF;
+}
+
+
+/* #################### Responsive Design 544px以下 #################### */
+@media (max-width: 544px) {	
+// index.html.erb    
+   .move_pages_function {
+    padding: 10px 30px;
+   }
+}
+
+
+
+/* #################### Responsive Design 545px以上 #################### */
+@media (min-width: 545px) {	
+// confirm.html.erb    
+   .content_check_msg {
+       width: 50%;
+   }
+}

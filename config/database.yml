@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+
+development:
+  <<: *default
+  database: app_howl_development
+
+test:
+  <<: *default
+  database: app_howl_test
+
+production:
+  <<: *default
+  database: app_howl_production
+  username: app_howl
+  password: <%= ENV['APP_HOWL_DATABASE_PASSWORD'] %>

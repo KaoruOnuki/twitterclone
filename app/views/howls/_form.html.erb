@@ -1,0 +1,30 @@
+<div class="editting_form container">
+    <div class="editting_column">
+    <%= form_with(model: @howl, local:true, url: choose_new_or_edit) do |form| %>
+        <% if @howl.errors.any? %>
+            <div id="error_explanation">
+                <ul>
+                    <% @howl.errors.full_messages.each do |msg| %>
+                        <li><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <div class="edit_form row">
+            <div class="howl_new col-sm-6 col-md-4">
+                <%= form.label :内容を編集してください, class: "action_order" %>
+                <%= form.text_area :content, class: "field_size" %>
+            </div>
+        </div>
+        
+        <div class="submit_form">
+            <%= form.submit "編集完了", class: "move_pages_function" %>
+        </div>
+    <% end %>
+    </div>
+    
+    <div class="move_pages">
+        <%= link_to "一覧に戻る", howls_path, class: "move_pages_function" %>
+    </div>
+</div>

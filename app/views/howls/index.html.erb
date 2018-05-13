@@ -1,0 +1,25 @@
+<div class="index_form container">
+    <h1>投稿一覧</h1>
+    <p><%= notice %></p>
+       
+    <div class="posted_sum row">
+        <% @howls.each do |howl| %>
+            <div class="posted_column col-sm-6 col-lg-4">
+                <div class="posted_column_content row">
+                    <p class="col-xs-3"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></p>
+                    <p class="col-xs-9"><%= howl.content %></p>
+                </div>
+                <div class="posted_column_buttons row">
+                    <p><%= link_to "確認", howl_path(howl.id), class: "sum_function col-xs-4", style: "margin-top: 10px" %></p>
+                    <p><%= link_to "編集", edit_howl_path(howl.id), class: "sum_function col-xs-4" %></p>
+                    <p><%= link_to "削除", howl_path(howl.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "sum_function col-xs-4" %></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    
+    <div class="move_pages">
+        <p><%= link_to "新しい投稿をする", new_howl_path, class: "move_pages_function" %></p>
+        <p><%= link_to "Topに戻る", howls_top_path, class: "move_pages_function" %></p>
+    </div>
+</div>
