@@ -13,7 +13,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
 
   config.assets.compile = true
-  config.assets.precompile << /\.(?:svg|eot|woff|ttf|woff2)$/
+  # config.assets.precompile << /\.(?:svg|eot|woff|ttf|woff2)$/
   
   config.log_level = :debug
 
