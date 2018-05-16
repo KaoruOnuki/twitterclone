@@ -1,3 +1,7 @@
+.container-fruid {
+  overflow: hidden;
+}
+
 .parallax {
     position: relative;
     background: image-url('moon.jpeg');
@@ -83,7 +87,7 @@
 }
 
 .feature table {
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .feature_column {
@@ -96,7 +100,7 @@
 
 .other_howls_title {
     margin-left: 20px;
-    padding: 30px;   
+    padding: 30px;
 }
 
 .other_howls_title h2 {
@@ -131,7 +135,7 @@
 
 
 /* #################### Responsive Design 544px以下 #################### */
-@media (max-width: 544px) {	  
+@media (max-width: 544px) {
     .other_howls_content {
         padding: 10px;
     }

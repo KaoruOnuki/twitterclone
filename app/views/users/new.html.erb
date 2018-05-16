@@ -1,0 +1,47 @@
+<div class="editting_form container">
+  <h1>アカウント作成</h1>
+  <div class="action_order">ようこそGuestさん<br>クイック登録で今すぐHowlをはじめよう</div>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="input_column">
+      <table>
+        <tr>
+          <td><%= f.label :ユーザーネーム %></td>
+          <td><%= f.text_field :name %></td>
+      </tr>
+
+      <tr>
+          <td><%= f.label :メールアドレス %></td>
+          <td><%= f.email_field :email %></td>
+      </tr>
+
+      <tr>
+          <td><%= f.label :パスワード（６文字以上） %></td>
+          <td><%= f.password_field :password %></td>
+      </tr>
+
+      <tr>
+          <td><%= f.label :パスワード再入力 %></td>
+          <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+    </table>
+  </div>
+
+    <%= f.submit "登録する", class: "confirm_function" %>
+  <% end %>
+
+  <div class="move_pages">
+      <p><%= link_to "既にアカウントを持っている", new_session_path, class: "move_pages_function" %></p>
+      <p><%= link_to "Topに戻る", root_path, class: "move_pages_function" %></p>
+  </div>
+</div>

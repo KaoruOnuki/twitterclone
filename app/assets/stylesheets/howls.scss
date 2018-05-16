@@ -165,20 +165,38 @@ footer {
 }
 
 
+///////////////////////////////////////////////// User table用
+.notice {
+    color: #BFB89D;
+}
+.input_column {
+    padding: 30px;
+    color: #777;
+}
+
+.input_column table {
+    font_weight: normal;
+    vertical-align: baseline;
+}
 
 /* #################### Responsive Design 544px以下 #################### */
-@media (max-width: 544px) {	
-// index.html.erb    
+@media (max-width: 544px) {
+// index.html.erb
    .move_pages_function {
     padding: 10px 30px;
+   }
+
+   .input_column td {
+     font-size: 12px;
    }
 }
 
 
 
+
 /* #################### Responsive Design 545px以上 #################### */
-@media (min-width: 545px) {	
-// confirm.html.erb    
+@media (min-width: 545px) {
+// confirm.html.erb
    .content_check_msg {
        width: 50%;
    }

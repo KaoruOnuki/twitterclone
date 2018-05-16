@@ -6,7 +6,9 @@
             <p>イヌ科の動物、特に狼に強く見られる習性で、遠方にいる仲間とのコミュニケーションや群れの連携における何かしら合図、仲間とはぐれたときの救難信号などの意図を伝えるためにおこなう</p>
         </div>
     </div>
-    
+
+    <!-- <%# binding.pry %>  -->
+
     <div class="wrapper row">
         <div class="wrapper_left col-md-6">
             <table>
@@ -33,23 +35,31 @@
                 </tr>
             </table>
         </div>
-    
+
         <div class="wrapper_right col-md-6">
             <%= image_tag "shadow_logo3.png", :height => '300', :class => "shadow_logo3" %>
-            
+
             <div class="wrapper_right_title">
                 <h2>悩み、ストレスは書きだそう。助け合おう。</h2>
                 <h4>HOWLをはじめる</h4>
                 <ul>
                     <li>
                         <button type="button" class="btn btn-default btn-lg">
-                          <%= link_to "自分の投稿一覧を見る", howls_path %>
+                          <% if logged_in? %>
+                            <%= link_to "投稿一覧", howls_path %>
+                          <% else %>
+                            <%= link_to "アカウント作成", new_user_path %>
+                          <% end %>
                         </button>
                     </li>
-                    
+
                     <li>
                         <button type="button" class="btn btn-default btn-lg">
-                          <%= link_to "新規投稿をする", new_howl_path %>
+                          <% if logged_in? %>
+                            <%= link_to "ログアウト", session_path(current_user.id), method: :delete, data: {confirm: "本当にログアウトしますか？"} %>
+                          <% else %>
+                            <%= link_to "ログイン", new_session_path %>
+                          <% end %>
                         </button>
                     </li>
                 </ul>
@@ -76,7 +86,7 @@
             <p class="feature_content">最近ストレスちゃんと解消できてる？<br>ネガティブな感情は溜めないでHOWLに書き出して解消していこう。</p>
             </div>
         </div>
-        
+
         <div class="feature col-md-4">
             <div class="feature_column">
                 <table>
@@ -88,7 +98,7 @@
                 <p class="feature_content">あなたは一人じゃない。<br>あなたの悩みに共感する世界中の仲間がMATEsボタンで応えてくれる。</p>
             </div>
         </div>
-        
+
         <div class="feature col-md-4">
             <div class="feature_column">
                 <table>
@@ -106,10 +116,11 @@
         <div class="other_howls_title">
             <h4>HOWL is about</h4>
             <h2>GET ADVICE & GIVE ADVICE</h2>
-            <p>どういう風に書けばいいの？何を書けばいいの？</p>
-            <p>みんなのHOWLを見てみよう。</p>
+            <div class="move_pages">
+              <p><%= link_to "みんなのHowlを見てみよう", howls_path, class: "move_pages_function" %></p>
+            </div>
         </div>
-        
+
         <div class="other_howls_content row">
             <div class="other_howls_content_one col-sm-6">
             <div class="other_howl">
@@ -121,7 +132,7 @@
                 </table>
                 <p>Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
             </div>
-            
+
             <div class="other_howl">
                 <table>
                     <tr>
@@ -131,7 +142,7 @@
                 </table>
                 <p>On #WorldChildrensDay, let’s make sure every child gets the love, safety, and support they need to pursue their dreams. https://twitter.com/UN/status/9326. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
             </div>
-            
+
             <div class="other_howl">
                 <table>
                     <tr>
@@ -141,7 +152,7 @@
                 </table>
                 <p>To every child - I dream of a world where you can laugh, dance, sing, learn, live in peace and be happy.#WorldChildrensDay</p>
             </div>
-            
+
             <div class="other_howl">
                 <table>
                     <tr>
@@ -162,7 +173,7 @@
                 </table>
                 <p>A day for children, by children. We’re raising our voices to help save children’s lives, fight for their rights and help them reach their full potential. Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
             </div>
-            
+
             <div class="other_howl">
                 <table>
                     <tr>
@@ -172,7 +183,7 @@
                 </table>
                 <p>Click on the link to learn more about @UNICEF http://uni.cf/worldchildrensday</p>
             </div>
-            
+
             <div class="other_howl">
                 <table>
                     <tr>
@@ -185,4 +196,4 @@
         </div>
         </div>
     </div><!-- other_howls rows -->
-</div><!-- container -->
+</div><!-- container-fruid -->

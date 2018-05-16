@@ -1,0 +1,37 @@
+<div class="editting_form container">
+  <h1>ユーザーログイン画面</h1>
+
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+
+  <div class="action_order">ようこそGuestさん<br>メールアドレスとパスワードを入力してください</div>
+
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="input_column">
+      <table>
+        <tr>
+          <td><%= f.label :メールアドレス %></td>
+          <td><%= f.email_field :email %></td>
+        </tr>
+
+        <tr>
+          <td><%= f.label :パスワード %></td>
+          <td><%= f.password_field :password %></td>
+        </tr>
+      </table>
+    </div>
+
+    <p><%= f.submit "ログイン", class: "confirm_function" %></p>
+  <% end %>
+
+  <div class="move_pages">
+    <% if logged_in? %>
+      <p><%= link_to "ログアウト", session_path(current_user.id), method: :delete, data: {confirm: "本当にログアウトしますか？"}, class: "confirm_function" %></p>
+    <% else %>
+      <p><%= link_to "Howlアカウントを持っていない", new_user_path, class: "move_pages_function" %></p>
+    <% end %>
+
+    <p><%= link_to "Topに戻る", root_path, class: "move_pages_function" %></p>
+  </div>
+</div>
