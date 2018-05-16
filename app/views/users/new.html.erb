@@ -17,25 +17,25 @@
       <table>
         <tr>
           <td><%= f.label :ユーザーネーム %></td>
-          <td><%= f.text_field :name %></td>
-      </tr>
+          <td><%= f.text_field :name, class: "input_field" %></td>
+        </tr>
 
-      <tr>
+        <tr>
           <td><%= f.label :メールアドレス %></td>
-          <td><%= f.email_field :email %></td>
-      </tr>
+          <td><%= f.email_field :email, class: "input_field" %></td>
+        </tr>
 
-      <tr>
+        <tr>
           <td><%= f.label :パスワード（６文字以上） %></td>
-          <td><%= f.password_field :password %></td>
-      </tr>
+          <td><%= f.password_field :password, class: "input_field" %></td>
+        </tr>
 
-      <tr>
+        <tr>
           <td><%= f.label :パスワード再入力 %></td>
-          <td><%= f.password_field :password_confirmation %></td>
-      </tr>
-    </table>
-  </div>
+          <td><%= f.password_field :password_confirmation, class: "input_field" %></td>
+        </tr>
+      </table>
+    </div>
 
     <%= f.submit "登録する", class: "confirm_function" %>
   <% end %>
