@@ -1,19 +1,34 @@
 <div class="editting_form container">
   <% if logged_in? %>
-    <h1>こんにちは、<%= @user.name %>さん</h1>
-    <div class="action_order">登録メールアドレスは<%= @user.email %>です</div>
+    <h1>こんにちは、<%= current_user.name %>さん</h1>
+    <div class="action_order">登録メールアドレスは<%= current_user.email %>です</div>
     <div class="move_pages">
         <p><%= link_to "投稿一覧を見る", howls_path, class: "move_pages_function" %></p>
         <p><%= link_to "新規投稿をする", new_howl_path, class: "move_pages_function" %></p>
         <p><%= link_to "Topに戻る", root_path, class: "move_pages_function" %></p>
         <p><%= link_to "ログアウト", session_path(current_user.id), method: :delete, data: {confirm: "本当にログアウトしますか？"}, class: "confirm_function" %></p>
     </div>
-<% else %>
+
+    <div class="favorites_list">
+      <div class="favorites_list_title">お気に入り投稿一覧</div>
+      <% @favorites_howls.all.each do |favorite| %>
+        <div class="posted_column col-sm-6">
+            <div class="posted_column_content row">
+                <p class="col-xs-3"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></p>
+                <p class="col-xs-5"><%= favorite.howl.user.name %>さんの投稿</p>
+                <p class="col-xs-2"><%= favorite.howl.content %></p>
+                <p><%= link_to "詳細", howl_path(favorite.howl.id), class: "sum_function col-xs-2" %></p>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
     <h1>登録完了</h1>
     <div class="action_order">ご登録ありがとうございました</div>
     <div class="move_pages">
         <p><%= link_to "早速Howlを始める", new_session_path, class: "confirm_function" %></p>
         <p><%= link_to "Topに戻る", root_path, class: "move_pages_function" %></p>
-      <% end %>
     </div>
+  <% end %>
 </div>

@@ -1,6 +1,6 @@
 class HowlsController < ApplicationController
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
-  before_action :your_page, only: [:new, :edit, :destroy]
+  before_action :your_page, only: [:new, :edit, :show, :destroy]
   def index
     @howls = Howl.all
   end
@@ -14,7 +14,8 @@ class HowlsController < ApplicationController
   end
 
   def create
-    @howl = Howl.create(content: params[:howl][:content])
+    @howl = Howl.new(howl_params)
+    @howl.user_id = current_user.id
     if @howl.save
       redirect_to howls_path, notice: "作成しました"
     else
@@ -23,13 +24,15 @@ class HowlsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(howl_id: @howl.id)
   end
 
   def edit
   end
 
+
   def update
-    if @howl.update(content: params[:howl][:content])
+    if @howl.update(howl_params)
       redirect_to howls_path, notice: "編集しました"
     else
       render "edit"
@@ -43,16 +46,21 @@ class HowlsController < ApplicationController
 
   def confirm
     get_howl
+    @howl.user_id = current_user.id
     render :new if @howl.invalid?
   end
 
   private
+    def howl_params
+      params.require(:howl).permit(:content)
+    end
+
     def set_howl
       @howl = Howl.find(params[:id])
     end
 
     def get_howl
-      @howl = Howl.new(content: params[:howl][:content])
+      @howl = Howl.new(howl_params)
     end
 
     def your_page

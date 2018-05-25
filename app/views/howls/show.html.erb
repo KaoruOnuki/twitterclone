@@ -8,8 +8,17 @@
 
     <div class="move_pages">
         <p><%= link_to "一覧に戻る", howls_path, class: "move_pages_function" %></p>
-        <p><%= link_to "ログイン", new_session_path, class: "confirm_function" %></p>
+        <p>
+          <% unless @howl.user == current_user %>
+            <% if @favorite.present? %>
+              <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+            <% else %>
+              <%= link_to 'お気に入りする', favorites_path(howl_id: @howl.id), method: :post, class: 'btn btn-primary' %>
+            <% end %>
+          <% end %>
+        </p>
     </div>
+
 
 
 </div>

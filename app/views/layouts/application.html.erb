@@ -33,6 +33,12 @@
                     <% end %>
                   </li>
 
+                  <li>
+                    <% if logged_in? %>
+                      <%= link_to "マイページ", user_path(current_user.id) %>
+                    <% end %>
+                  </li>
+
                   <li><%= link_to "投稿一覧を見る", howls_path %></li>
                 </ul>
               </div><!-- navbar-collapse -->

@@ -5,13 +5,13 @@
         <% @howls.each do |howl| %>
             <div class="posted_column col-sm-6 col-lg-4">
                 <div class="posted_column_content row">
-                    <p class="col-xs-3"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></p>
-                    <p class="col-xs-9"><%= howl.content %></p>
+                    <p class="col-xs-2"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></p>
+                    <p class="col-xs-7"><%= howl.user.name %>さんの投稿</p>
+                    <p class="col-xs-3"><%= howl.content %></p>
                 </div>
                 <div class="posted_column_buttons row">
                     <p><%= link_to "詳細", howl_path(howl.id), class: "sum_function col-xs-4", style: "margin-top: 10px" %></p>
-
-                    <% if logged_in? %>
+                    <% if howl.user == current_user %>
                       <p><%= link_to "編集", edit_howl_path(howl.id), class: "sum_function col-xs-4" %></p>
                       <p><%= link_to "削除", howl_path(howl.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "sum_function col-xs-4" %></p>
                     <% end %>
