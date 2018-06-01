@@ -16,11 +16,21 @@ class HowlsController < ApplicationController
   def create
     @howl = Howl.new(howl_params)
     @howl.user_id = current_user.id
-    if @howl.save
-      redirect_to howls_path, notice: "作成しました"
-    else
-      render "new"
-    end
+    # if @howl.save
+    #   redirect_to howls_path, notice: "作成しました"
+    # else
+    #   render "new"
+    # end
+      respond_to do |format|
+        if @howl.save
+          HowlMailer.howl_mail(@howl).deliver
+          format.html { redirect_to @howl, notice: '作成しました' }
+          format.json { render :show, status: :created, location: @howl }
+        else
+          format.html { render :new }
+          format.json { render json: @howl.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   def show
