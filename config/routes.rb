@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   # end
 
 
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-    
+    mount LetterOpenerWeb::Engine, at: "/inbox"
+
 
   resources :contacts
 end
