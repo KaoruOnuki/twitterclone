@@ -47,5 +47,5 @@ Rails.application.configure do
   # }
 
   config.action_mailer.default_url_options = { host: 'shielded-springs-34497.herokuapp.com/' }
-  # config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.delivery_method = :letter_opener_web
 end
