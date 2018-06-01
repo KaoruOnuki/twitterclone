@@ -46,6 +46,6 @@ Rails.application.configure do
   #   enable_starttls_auto: true
   # }
 
-  config.action_mailer.default_url_options = { host: 'shielded-springs-34497.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://shielded-springs-34497.herokuapp.com/' }
   config.action_mailer.delivery_method = :letter_opener
 end
