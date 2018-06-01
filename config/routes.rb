@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :contacts
   root "howls#top"
   get "/howls", to: "howls#index"
 
@@ -16,4 +15,6 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  resources :contacts
 end

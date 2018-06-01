@@ -9,7 +9,7 @@
         <p><%= link_to "ログアウト", session_path(current_user.id), method: :delete, data: {confirm: "本当にログアウトしますか？"}, class: "confirm_function" %></p>
     </div>
 
-    <div class="favorites_list">
+    <div class="favorites_list row">
       <div class="favorites_list_title">お気に入り投稿一覧</div>
       <% @favorites_howls.all.each do |favorite| %>
         <div class="posted_column col-sm-6">
@@ -21,6 +21,10 @@
             </div>
         </div>
       <% end %>
+    </div>
+
+    <div class="move_pages">
+        <p><%= link_to "お問い合わせ履歴", contacts_path, class: "move_pages_function" %></p>
     </div>
 
   <% else %>

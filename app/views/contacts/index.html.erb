@@ -1,31 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="index_form container">
+  <h1>お問い合わせ履歴</h1>
+  <p id="notice"><%= notice %></p>
 
-<h1>Contacts</h1>
+  <div class="posted_sum row table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="col-xs-2">お名前</th>
+          <th class="col-xs-2">登録メールアドレス</th>
+          <th class="col-xs-2">お問い合わせ内容</th>
+          <th class="col-xs-2"></th>
+          <th class="col-xs-2"></th>
+          <th class="col-xs-2"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+         <% if contact.user_id == current_user.id %>
+            <tr>
+              <td><%= contact.name %></td>
+              <td><%= contact.email %></td>
+              <td><%= contact.content %></td>
+              <td><%= link_to '詳細', contact, class: "sum_function" %></td>
+              <td><%= link_to '編集', edit_contact_path(contact), class: "sum_function" %></td>
+              <td><%= link_to '削除', contact, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "sum_function" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.content %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Contact', new_contact_path %>
+
+  <div class="move_pages">
+    <p><%= link_to '新しいお問い合わせをする', new_contact_path, class: "move_pages_function" %></p>
+  </div>
+</div>

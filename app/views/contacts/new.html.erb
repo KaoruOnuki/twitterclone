@@ -1,5 +1,8 @@
-<h1>New Contact</h1>
+<div class="editting_form container">
+  <h1><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>お問い合わせ内容の作成</h1>
+  <%= render 'form', contact: @contact %>
 
-<%= render 'form', contact: @contact %>
-
-<%= link_to 'Back', contacts_path %>
+  <div class="move_pages">
+      <p><%= link_to "お問い合わせ履歴", contacts_path, class: "move_pages_function" %></p>
+  </div>
+</div>

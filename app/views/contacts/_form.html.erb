@@ -1,32 +1,42 @@
-<%= form_with(model: contact, local: true) do |form| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+<div class="editting_form container">
+      <%= form_with(model: contact, local: true) do |form| %>
+        <% if contact.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% contact.errors.full_messages.each do |message| %>
+                <li><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <div class="edit_form row">
+            <div class="howl_new col-sm-6 col-md-4">
+                <%= form.label :内容を編集してください, class: "action_order" %>
+                <%= form.text_area :content, id: :contact_content, class: "field_size" %>
+            </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :contact_name %>
-  </div>
+        <div class="explanation">
+          <p>登録完了後、ご指定のメールアドレスに確認メールが届きます。<br>*もし指定がなければ下記のメールアドレスにメールが届きます。</p>
+        </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :contact_email %>
-  </div>
+        <div class="input_column">
+          <table>
+            <tr>
+              <td><%= form.label :name %></td>
+              <td><%= form.text_field :name, id: :contact_name, :placeholder => current_user.name %></td>
+            </tr>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :contact_content %>
-  </div>
+            <tr>
+              <td><%= form.label :email %></td>
+              <td><%= form.text_field :email, id: :contact_email, :placeholder => current_user.email %></td>
+            </tr>
+          </table>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="actions">
+          <%= form.submit "登録する", class: "confirm_function" %>
+        </div>
+    <% end %>
+</div>

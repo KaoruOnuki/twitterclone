@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="editting_form container">
+      <h1><span class="glyphicon glyphicon-send" aria-hidden="true"></span>ありがとうございました</h1>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @contact.content %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+      <div class="editting_column">
+  <p>お名前：<%= @contact.name %></p>
+  <p>メールアドレス：<%= @contact.email %></p>
+  <p>お問い合わせ内容：<%= @contact.content %></p>
+</div>
+  <div class="move_pages">
+      <p><%= link_to "再編集する", edit_contact_path(@contact), class: "move_pages_function" %></p>
+      <p><%= link_to "お問い合わせ履歴", contacts_path, class: "move_pages_function" %></p>
+  </div>
+</div>
