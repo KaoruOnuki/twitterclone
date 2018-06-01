@@ -48,4 +48,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'git.heroku.com/shielded-springs-34497.git' }
   config.action_mailer.delivery_method = :letter_opener
+  LAUNCHY_DEBUG = true
 end
