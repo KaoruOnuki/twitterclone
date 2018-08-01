@@ -1,6 +1,7 @@
 class HowlsController < ApplicationController
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
-  before_action :your_page, only: [:new, :edit, :show, :destroy]
+  before_action :your_page, only: [:show, :destroy]
+  before_action :edit_restriction, only: [:edit]
   def index
     @howls = Howl.all
   end
@@ -10,6 +11,7 @@ class HowlsController < ApplicationController
       get_howl
     else
       @howl = Howl.new
+      @howl.user_id = current_user.id
     end
   end
 
@@ -76,6 +78,12 @@ class HowlsController < ApplicationController
     def your_page
       unless logged_in?
         redirect_to new_session_path
+      end
+    end
+
+    def edit_restriction
+      unless logged_in? && @howl.user_id == current_user.id
+        redirect_to user_path
       end
     end
 end

@@ -1,4 +1,11 @@
 ///////////////////////////////////////////////// application.html.erb
+.danger {
+  padding: 2px;
+  background-color: red;
+  color: #fff;
+  display: table;
+}
+
 header {
     background-color: #000;
 }
